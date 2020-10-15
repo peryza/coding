@@ -4,7 +4,7 @@ fun sorted(list: List<String>): List<String> {
 }
 
 
-fun main(args: Array<String>) {
+fun main() {
 
     val words = readLine().toString()
 //   Разделение строк
