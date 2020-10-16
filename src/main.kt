@@ -1,3 +1,4 @@
+//Функция для сортировки
 fun sorted(list: List<String>): List<String> {
     val ListSorted = list.sorted()
     return ListSorted
@@ -7,18 +8,18 @@ fun sorted(list: List<String>): List<String> {
 fun main() {
 
     val words = readLine().toString()
-//   Разделение строк
+//Разделение строк
     println("-----------Первый уровень-------------------")
     var yes = words.split(" ")
     yes.forEach { el -> println(el) }
 
 
-//    Сортировка списка слов
+//Сортировка списка слов
     println("-----------Второй уровень---------------------")
     yes = sorted(yes)
     yes.forEach { el -> println(el) }
 
-// вывод только уникальных слов
+//Вывод только уникальных слов
     println("-----------Третий уровень---------------------")
 
     var i = 0
@@ -52,7 +53,7 @@ fun main() {
     yes2.put(yes.last(), k + 1)
     yes2.forEach { (key, value) -> println("$key $value") }
 
-//    сортировка слов по убыванию
+//сортировка слов по убыванию
     println("----------Пятый уровень----------------")
     val result = yes2.toList().sortedByDescending { (_, value) -> value }.toMap()
     result.forEach { key, value -> println("$key $value") }
