@@ -1,59 +1,46 @@
-//Функция для сортировки
-fun sorted(list: List<String>): List<String> {
-    return list.sorted()
-}
-
-
 fun main() {
 
-    val words = readLine().toString()
-//Разделение строк
+    var words = readLine().toString()
+    if (words == "") words = "the quick brown fox jumps over the lazy dog"
+
+
+/* Разделение строк Уровень 1 */
+
     println("-----------Первый уровень----------------")
-    var listWords = words.split(" ")
-    listWords.forEach { el -> println(el) }
+    val listWords = words.split(" ")
+    listWords.forEach(::println)
 
 
-//Сортировка списка слов
+/* Сортировка списка слов Уровень 2 */
+
     println("-----------Второй уровень----------------")
-    listWords = sorted(listWords)
-    listWords.forEach { el -> println(el) }
+    val listSort = listWords.sorted()
+    listSort.forEach(::println)
 
-//Вывод только уникальных слов
+
+/* Вывод только уникальных слов Уровень 3 */
+
     println("-----------Третий уровень----------------")
+    val listDist = listSort.distinct()
+    listDist.forEach(::println)
 
-    var i = 0
-    var count = listWords.size - 1
-    while (i < count) {
-        if (listWords[i] != listWords[i + 1]) {
-            println(listWords[i])
 
-        }
-        i += 1
-    }
-    println(listWords.last())
+/* Подсчет количества повторений слов */
 
-//Подсчет количества повторений слов
     println("----------Четвертый уровень--------------")
+    val wordCount: MutableMap<String, Int> = mutableMapOf()
+    for (word in listSort) {
+        if (!wordCount.contains(word)) wordCount[word] = 0
+        wordCount[word] = wordCount[word]!! + 1
 
-    i = 0
-    var k = 0
-    val wordsMap = mutableMapOf<String, Int>() // создание ассоциативного массива
-
-    count = listWords.size - 1
-    while (i < count) {
-        if (listWords[i] != listWords[i + 1]) {
-            wordsMap.put(listWords[i], k + 1)
-            k = 0
-        } else k += 1
-        i += 1
     }
-    wordsMap.put(listWords.last(), k + 1)
-    wordsMap.forEach { (key, value) -> println("$key $value") }
+    wordCount.forEach { (k, v) -> println("$k $v") }
 
-//сортировка слов по убыванию
+/* сортировка слов по убыванию */
+
     println("----------Пятый уровень----------------")
-    val result = wordsMap.toList().sortedByDescending { (_, value) -> value }.toMap()
-    result.forEach { (key, value) -> println("$key $value") }
+    val wordCountSort = wordCount.toList().sortedByDescending { (_, v) -> v }
+    wordCountSort.forEach { (k, v) -> println("$k $v") }
 
 
 }
