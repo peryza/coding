@@ -4,28 +4,28 @@ fun main() {
     if (words == "") words = "the quick brown fox jumps over the lazy dog"
 
 
-/* Разделение строк Уровень 1 */
+/* Разделение строк - Уровень 1 */
 
     println("-----------Первый уровень----------------")
     val listWords = words.split(" ")
     listWords.forEach(::println)
 
 
-/* Сортировка списка слов Уровень 2 */
+/* Сортировка списка слов - Уровень 2 */
 
     println("-----------Второй уровень----------------")
     val listSort = listWords.sorted()
     listSort.forEach(::println)
 
 
-/* Вывод только уникальных слов Уровень 3 */
+/* Вывод только уникальных слов - Уровень 3 */
 
     println("-----------Третий уровень----------------")
     val listDist = listSort.distinct()
     listDist.forEach(::println)
 
 
-/* Подсчет количества повторений слов */
+/* Подсчет количества повторений слов - Уровень 4 */
 
     println("----------Четвертый уровень--------------")
     val wordCount: MutableMap<String, Int> = mutableMapOf()
@@ -36,7 +36,7 @@ fun main() {
     }
     wordCount.forEach { (k, v) -> println("$k $v") }
 
-/* сортировка слов по убыванию */
+/* сортировка слов по убыванию - Уровень 5 */
 
     println("----------Пятый уровень----------------")
     val wordCountSort = wordCount.toList().sortedByDescending { (_, v) -> v }
