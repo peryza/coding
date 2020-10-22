@@ -1,8 +1,15 @@
 fun main() {
 
     var words = readLine().toString()
+
+/* Проверки */
     if (words == "") words = "the quick brown fox jumps over the lazy dog"
 
+    if (Regex("""\d+""").containsMatchIn(words)) {
+        println("ОШИБКА СТРОКА СОДЕРЖИТ ЦИФРУ")
+        return
+    }
+    
 
 /* Разделение строк - Уровень 1 */
 
