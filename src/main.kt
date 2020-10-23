@@ -2,14 +2,15 @@ fun main() {
 
     var words = readLine().toString()
 
-/* Проверки */
+/* Проверки на пустую строку*/
     if (words == "") words = "the quick brown fox jumps over the lazy dog"
 
-    if (Regex("""\d+""").containsMatchIn(words)) {
-        println("ОШИБКА СТРОКА СОДЕРЖИТ ЦИФРУ")
+/* Проверка на допустимые символы */
+    for (word in words) if (!Regex("[a-z ]").containsMatchIn(word.toString())) {
+        println("ОШИБКА! Недопустимый символ '$word'")
         return
     }
-    
+
 
 /* Разделение строк - Уровень 1 */
 
