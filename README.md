@@ -11,20 +11,20 @@
 
 ## Репозиторий также включает в себя следующие batch scripts
 
-1.BUILD.bat - скрипт для компиляции файла myApp.jar
-2.RUN.bat - скрипт для запуска myApp.jar
-3.TEST.bat - скрипт для тестирования приложения (myApp.jar)
+1. BUILD.bat - скрипт для компиляции файла myApp.jar
+2. RUN.bat - скрипт для запуска myApp.jar
+3. TEST.bat - скрипт для тестирования приложения (myApp.jar)
 
 ## Примеры использования
 
-1."ваш текс"| java -jar myApp.jar
-2.echo "ваш текс"
++ "ваш текс"| java -jar myApp.jar
++  echo "ваш текс"
 
 
 ## Тестовые сценарии
 
-java -jar myApp.jar 
-java -jar myApp.jar the quick brown fox jumps over the lazy dog
-java -jar maApp.jar the quick brown   fox jumps over the lazy dog
-java -jar maApp.jar the quick, brown, fox jumps over the lazy dog.
-java -jar maApp.jar the quick brown fox /n jumps over the lazy dog
++ java -jar myApp.jar 
++ java -jar myApp.jar the quick brown fox jumps over the lazy dog
++ java -jar maApp.jar the quick brown   fox jumps over the lazy dog
++ java -jar maApp.jar the quick, brown, fox jumps over the lazy dog.
++ java -jar maApp.jar the quick brown fox /n jumps over the lazy dog
