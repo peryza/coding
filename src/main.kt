@@ -1,21 +1,18 @@
-fun main() {
-
-    var words = readLine().toString()
-
-/* Проверки на пустую строку*/
-    if (words == "") words = "the quick brown fox jumps over the lazy dog"
-
-/* Проверка на допустимые символы */
-    for (word in words) if (!Regex("[a-z ]").containsMatchIn(word.toString())) {
-        println("ОШИБКА! Недопустимый символ '$word'")
-        return
+fun main(args: Array<String>) {
+    if (args.isEmpty()) {
+        val words = readLine().toString().split(' ')
+        work(words)
+    } else {
+        work(args.toList())
     }
 
+}
+
+fun work(listWords: List<String>) {
 
 /* Разделение строк - Уровень 1 */
 
     println("-----------Первый уровень----------------")
-    val listWords = words.split(" ")
     listWords.forEach(::println)
 
 
@@ -36,20 +33,17 @@ fun main() {
 /* Подсчет количества повторений слов - Уровень 4 */
 
     println("----------Четвертый уровень--------------")
-    val wordCount: MutableMap<String, Int> = mutableMapOf()
-    for (word in listSort) {
-        if (!wordCount.contains(word)) wordCount[word] = 0
-        wordCount[word] = wordCount[word]!! + 1
 
-    }
-    wordCount.forEach { (k, v) -> println("$k $v") }
+    val listWordCount = listSort.groupingBy { it }.eachCount()
+    listWordCount.forEach { (word, count) -> println("$word $count") }
 
 /* сортировка слов по убыванию - Уровень 5 */
 
     println("----------Пятый уровень----------------")
-    val wordCountSort = wordCount.toList().sortedByDescending { (_, v) -> v }
-    wordCountSort.forEach { (k, v) -> println("$k $v") }
 
+    val listWordCountSort = listWordCount.toList().sortedWith(compareBy({ -it.second }, { it.first }))
+    listWordCountSort.forEach { (word, count) -> println("$word $count") }
+    println("\n")
 
 }
 
