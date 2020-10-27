@@ -23,8 +23,10 @@
 
 ## Тестовые сценарии
 
-+ java -jar myApp.jar 
 + java -jar myApp.jar the quick brown fox jumps over the lazy dog
-+ java -jar maApp.jar the quick brown   fox jumps over the lazy dog
++ java -jar 
 + java -jar maApp.jar the quick, brown, fox jumps over the lazy dog.
-+ java -jar maApp.jar the quick brown fox /n jumps over the lazy dog
++ java -jar maApp.jar the quick brown fox \n jumps over the lazy dog
++ java -jar maApp.jar the1 quick2 brown3 fox jumps4 over the lazy dog
++ java -jar maApp.jar the the the the the
++ java -jar maApp.jar  the &nbsp; the &nbsp;  the &nbsp; the &nbsp; the 
