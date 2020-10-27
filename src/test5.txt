@@ -1,0 +1,51 @@
+the1 quick2 brown3 fox jumps4 over the lazy dog
+-----------LEVEL 1----------------
+the1
+quick2
+brown3
+fox
+jumps4
+over
+the
+lazy
+dog
+-----------LEVEL 2----------------
+brown3
+dog
+fox
+jumps4
+lazy
+over
+quick2
+the
+the1
+-----------LEVEL 3----------------
+brown3
+dog
+fox
+jumps4
+lazy
+over
+quick2
+the
+the1
+-----------LEVEL 4----------------
+brown3 1
+dog 1
+fox 1
+jumps4 1
+lazy 1
+over 1
+quick2 1
+the 1
+the1 1
+-----------LEVEL 5----------------
+brown3 1
+dog 1
+fox 1
+jumps4 1
+lazy 1
+over 1
+quick2 1
+the 1
+the1 1
